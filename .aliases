@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Easier navigation: .., ..., ...., .....
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias g="git"
+alias h="history"
+
+# List all files in long format
+alias ll="ls -lhF"
+
+# List all files colorized in long format, including dot files
+alias la="ls -lahF"
+
+# List only directories
+alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
+
+# Always enable colored `grep` output
+alias grep='grep --color=auto '
+
+# Lock the screen
+alias afk="i3lock -c 000000"
+
+alias untar='tar xvf'

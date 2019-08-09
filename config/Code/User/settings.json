@@ -1,0 +1,15 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "editor.fontFamily": "'Iosevka Term', 'IBM Plex Mono', 'Fira Mono'",
+    "editor.formatOnPaste": true,
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "Iosevka Term",
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.copyWithSyntaxHighlighting": false,
+    "files.eol": "\n",
+    "editor.wordWrap": "on",
+    "files.insertFinalNewline": true
+}
