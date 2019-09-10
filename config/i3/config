@@ -173,7 +173,7 @@ bar {
         status_command i3status --config ~/.config/i3/status.conf
 }
 
-exec_always xrandr --output HDMI-0 --primary --mode 1920x1200 --rate 60 --output DP-1 --mode 1920x1200 --rate 60 --left-of HDMI-0
+exec_always xrandr --output HDMI-1 --primary --mode 1920x1200 --rate 60 --output DP-1 --mode 1920x1200 --rate 60 --left-of HDMI-1
 # set background
 exec --no-startup-id feh --bg-scale ${HOME}/Bilder/backgrounds/marco-xu-1099021-unsplash.jpg
 exec setxkbmap -option compose:ralt
