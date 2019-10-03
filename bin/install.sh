@@ -29,6 +29,7 @@ base() {
                 vim \
                 wget \
                 w3m \
+                xclip \
                 zip \
 
         sudo dnf autoremove -y
@@ -37,14 +38,14 @@ base() {
 install_wm() {
         sudo dnf check-update
         sudo dnf upgrade -y
-        
+
         sudo dnf install -y \
                 feh \
                 i3 \
                 i3status \
                 i3lock \
                 dmenu \
-                
+
         sudo dnf autoremove -y
 }
 
@@ -75,7 +76,7 @@ install_misc() {
 
 # install rust
 install_rust() {
-	curl https://sh.rustup.rs -sSf | sh
+        curl https://sh.rustup.rs -sSf | sh
 }
 
 usage() {
@@ -89,7 +90,7 @@ usage() {
 
 main() {
         local arg=$1
-        
+
         if [[ -z "$arg" ]]; then
                 usage
                 exit 1
