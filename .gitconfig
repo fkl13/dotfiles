@@ -24,9 +24,6 @@
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
-[core]
-	editor = vim
-
 [color]
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
@@ -34,3 +31,21 @@
 
 	# Use custom `.gitignore` and
 	excludesfile = ~/.gitignore
+
+[core]
+	# Use custom `.gitignore` and
+	excludesfile = ~/.gitignore
+	editor = vim
+
+[diff]
+	tool = icdiff
+	noprefix = true
+
+[difftool]
+	prompt = false
+
+[difftool "icdiff"]
+	cmd = ~/.local/bin/icdiff --line-numbers $LOCAL $REMOTE
+
+[icdiff]
+	options = --highlight --line-numbers
