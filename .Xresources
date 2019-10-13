@@ -80,7 +80,6 @@ URxvt.secondaryWheel:  1
 !! scrollbar
 *scrollBar: false
 
-URxvt*termName: rxvt
 URxvt*depth: 32
 
 !! clickable urls
