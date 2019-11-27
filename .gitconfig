@@ -16,6 +16,8 @@
 	branches = branch -a
 	remotes = remote -v
 
+	ls-ignored-changes = !git ls-files -v | grep ^S | awk '{print $2}'
+
 	# from trevor bramble https://twitter.com/TrevorBramble/status/774292970681937920
 	alias=!git config -l | grep ^alias | cut -c 7- | sort
 
@@ -28,9 +30,6 @@
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
-
-	# Use custom `.gitignore` and
-	excludesfile = ~/.gitignore
 
 [core]
 	# Use custom `.gitignore` and
@@ -49,3 +48,6 @@
 
 [icdiff]
 	options = --highlight --line-numbers
+
+[pager]
+	difftool = true
