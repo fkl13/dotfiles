@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 add_rpmfusion() {
-        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm
 }
 
 base() {
@@ -11,6 +13,7 @@ base() {
         sudo dnf install -y \
                 atool \
                 bash-completion \
+                cifs-utils \
                 curl \
                 fzf \
                 git \
@@ -23,6 +26,7 @@ base() {
                 ranger \
                 ripgrep \
                 rxvt-unicode-256color \
+                ShellCheck \
                 tig \
                 tmux \
                 tree \
@@ -49,7 +53,7 @@ install_wm() {
         sudo dnf autoremove -y
 }
 
-install_misc() {
+install_apps() {
         sudo dnf check-update
         sudo dnf upgrade -y
 
@@ -64,6 +68,7 @@ install_misc() {
                 mozilla-fira-mono-fonts \
                 mozilla-fira-sans-fonts \
                 mozilla-fira-fonts-common \
+                newsboat \
                 mpd \
                 mpc \
                 ncmpcpp \
@@ -120,7 +125,7 @@ usage() {
         echo "  base      - install base packages"
         echo "  full      - install base, wm and desktop"
         echo "  wm        - install window manager"
-        echo "  misc      - install desktop pkgs"
+        echo "  apps      - install desktop pkgs"
         echo "  rust      - install rust"
         echo "  golang    - install go"
         echo "  scripts   - install scripts"
@@ -138,17 +143,17 @@ main() {
                 base
         elif [[ $arg == "full" ]]; then
                 base
-                install_misc
+                install_apps
                 install_wm
                 install_scripts
         elif [[ $arg == "wm" ]]; then
                 install_wm
-        elif [[ $arg == "misc" ]]; then
-                install_misc
+        elif [[ $arg == "apps" ]]; then
+                install_apps
         elif [[ $arg == "rust" ]]; then
                 install_rust
         elif [[ $arg == "golang" ]]; then
-                install_golang
+                install_golang "$2"
         elif [[ $arg == "scripts" ]]; then
                 install_scripts
         else
