@@ -48,7 +48,7 @@ install_wm() {
                 i3 \
                 i3status \
                 i3lock \
-                dmenu \
+                rofi \
 
         sudo dnf autoremove -y
 }
