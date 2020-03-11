@@ -229,8 +229,8 @@
 #def_key "right"
 #  slave_screen
 #
-#def_key "right"
-#  volume_up
+def_key "="
+  volume_up
 #
 #def_key "+"
 #  volume_up
@@ -244,8 +244,8 @@
 #def_key "left"
 #  volume_down
 #
-#def_key "-"
-#  volume_down
+def_key "-"
+  volume_down
 #
 #def_key ":"
 #  execute_command
@@ -292,8 +292,8 @@
 #def_key "8"
 #  show_visualizer
 #
-#def_key "="
-#  show_clock
+def_key "9"
+  show_clock
 #
 #def_key "@"
 #  show_server_info
@@ -367,9 +367,9 @@
 #def_key "X"
 #  set_crossfade
 #
-#def_key "u"
-#  update_database
-#
+def_key "u"
+  update_database
+
 #def_key "ctrl-s"
 #  sort_playlist
 #
@@ -541,3 +541,18 @@
 #def_key "q"
 #  quit
 #
+
+def_key "k"
+  scroll_up
+def_key "j"
+  scroll_down
+
+def_key "h"
+    previous_column
+def_key "l"
+    next_column
+
+def_key "h"
+  jump_to_parent_directory
+def_key "l"
+  enter_directory

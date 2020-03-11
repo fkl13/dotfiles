@@ -23,9 +23,9 @@ dotfiles: ## Install dotfiles
 	ln -snf $(CURDIR)/config/gtk-3.0/settings.ini $(HOME)/.config/gtk-3.0/settings.ini;
 	ln -snf $(CURDIR)/config/i3 $(HOME)/.config/i3;
 	ln -snf $(CURDIR)/config/mpd $(HOME)/.config/mpd;
+	ln -snf $(CURDIR)/config/ncmpcpp $(HOME)/.config/ncmpcpp;
 	ln -snf $(CURDIR)/config/ranger $(HOME)/.config/ranger;
 
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
