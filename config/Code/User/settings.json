@@ -1,15 +1,18 @@
 {
     "telemetry.enableCrashReporter": false,
-    "editor.fontFamily": "'Iosevka Term', 'Fira Mono', 'monospace'",
+    "editor.fontFamily": "'JetBrains Mono','Iosevka Term', 'Fira Mono', 'monospace'",
     "editor.formatOnPaste": true,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Gruvbox Dark (Hard)",
     "files.trimTrailingWhitespace": true,
-    "terminal.integrated.fontFamily": "'Iosevka Term', 'monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono','Iosevka Term', 'monospace'",
     "editor.minimap.enabled": false,
     "workbench.startupEditor": "none",
     "editor.copyWithSyntaxHighlighting": false,
     "files.eol": "\n",
     "editor.wordWrap": "on",
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "editor.renderWhitespace": "all"
 }
