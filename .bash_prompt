@@ -81,7 +81,7 @@ else
 	white="\e[1;37m";
 fi;
 
-    # Highlight the user name when logged in as root.
+# Highlight the user name when logged in as root.
 if [[ "${USER}" == "root" ]]; then
 	userStyle="${red}";
 else
