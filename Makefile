@@ -1,5 +1,5 @@
 .PHONY: all
-all: dotfiles
+all: dotfiles bin ## Installs the dotfiles and bin directory
 
 .PHONY: dotfiles
 dotfiles: ## Install dotfiles
@@ -25,6 +25,13 @@ dotfiles: ## Install dotfiles
 	ln -snf $(CURDIR)/config/mpd $(HOME)/.config/mpd;
 	ln -snf $(CURDIR)/config/ncmpcpp $(HOME)/.config/ncmpcpp;
 	ln -snf $(CURDIR)/config/ranger $(HOME)/.config/ranger;
+
+.PHONY: bin
+bin: ## Sym link the bin dicretory files
+	for file in $(shell find $(CURDIR)/bin -type f); do \
+		f=$$(basename $$file); \
+		ln -sf $$file $(HOME)/.local/bin/$$f; \
+	done
 
 .PHONY: help
 help:
