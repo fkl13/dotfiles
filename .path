@@ -1,7 +1,27 @@
 #!/bin/bash
 
-# add go, use default GOPATH
-export PATH=$PATH:/usr/local/go/bin
+# Avoid duplicates in PATH
+pathmunge () {
+    if ! [[ "$PATH" =~ "$1" ]] ; then
+        if [[ "$2" = "before" ]] ; then
+            PATH="$1:$PATH"
+        else
+            PATH="$PATH:$1"
+        fi
+        export PATH
+    fi
+}
+
+# go path
+GOPATH="${HOME}/go"
+pathmunge "$GOPATH"
+
+# add go
+pathmunge /usr/local/go/bin
 
 # add rust path
-export PATH="$HOME/.cargo/bin:$PATH"
+RUSTPATH="${HOME}/.cargo/bin"
+pathmunge "$RUSTPATH"
+
+unset -f pathmunge
+unset RUSTPATH
