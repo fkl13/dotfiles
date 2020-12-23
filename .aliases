@@ -41,3 +41,5 @@ alias cp='cp -i'
 
 # move file interactive
 alias mv='mv -i'
+
+alias rd='. ranger'
