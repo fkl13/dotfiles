@@ -15,6 +15,7 @@ pathmunge () {
 # go path
 GOPATH="${HOME}/go"
 pathmunge "$GOPATH"
+pathmunge "$GOPATH/bin"
 
 # add go
 pathmunge /usr/local/go/bin
