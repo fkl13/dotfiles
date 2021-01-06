@@ -49,6 +49,7 @@ install_wm() {
                 i3status \
                 i3lock \
                 rofi \
+                dunst
 
         sudo dnf autoremove -y
 }
