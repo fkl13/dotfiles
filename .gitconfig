@@ -43,7 +43,7 @@
 	prompt = false
 
 [difftool "icdiff"]
-	cmd = ~/.local/bin/icdiff --line-numbers $LOCAL $REMOTE
+	cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 
 [icdiff]
 	options = --highlight --line-numbers
