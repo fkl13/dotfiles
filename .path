@@ -3,7 +3,7 @@
 # Avoid duplicates in PATH
 pathmunge () {
     if ! [[ "$PATH" =~ "$1" ]] ; then
-        if [[ "$2" = "before" ]] ; then
+        if [[ "$2" == "before" ]] ; then
             PATH="$1:$PATH"
         else
             PATH="$PATH:$1"
@@ -13,16 +13,16 @@ pathmunge () {
 }
 
 # go path
-GOPATH="${HOME}/go"
+export GOPATH="${HOME}/go"
 pathmunge "$GOPATH"
 pathmunge "$GOPATH/bin"
 
 # add go
-pathmunge /usr/local/go/bin
+pathmunge /usr/local/go/bin "before"
 
 # add rust path
 RUSTPATH="${HOME}/.cargo/bin"
 pathmunge "$RUSTPATH"
+unset RUSTPATH
 
 unset -f pathmunge
-unset RUSTPATH
