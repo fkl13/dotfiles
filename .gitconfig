@@ -1,5 +1,4 @@
 [alias]
-
 	# View the current working tree status using the short format
 	s = status -s
 	st = status
@@ -33,8 +32,8 @@
 
 [core]
 	# Use custom `.gitignore` and
-	excludesfile = ~/.gitignore
-	editor = vim
+	excludesfile = ~/.gitignore_global
+	editor = nvim
 
 [diff]
 	tool = icdiff

@@ -10,7 +10,7 @@ dotfiles: ## Install dotfiles
 	ln -snf $(CURDIR)/.exports $(HOME)/.exports;
 	ln -snf $(CURDIR)/.functions $(HOME)/.functions;
 	ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig;
-	ln -snf $(CURDIR)/gitignore $(HOME)/.gitignore;
+	ln -snf $(CURDIR)/gitignore_global $(HOME)/.gitignore_global;
 	ln -snf $(CURDIR)/.gtkrc-2.0 $(HOME)/.gtkrc-2.0;
 	ln -snf $(CURDIR)/.inputrc $(HOME)/.inputrc;
 	ln -snf $(CURDIR)/.path $(HOME)/.path;
