@@ -20,5 +20,9 @@ GH_USER="nickname"
 git config --global github.user "$GH_USER"
 ```
 
-## sources
+## Acknowledgements
+
+Inspiration and code was taken from many sources, including:
+
 * [github.com/jessfraz/dotfiles](https://github.com/jessfraz/dotfiles).
+* [github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
