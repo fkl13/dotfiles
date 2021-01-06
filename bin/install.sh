@@ -25,7 +25,7 @@ base() {
                 poppler \
                 ranger \
                 ripgrep \
-                rxvt-unicode-256color \
+                rxvt-unicode \
                 ShellCheck \
                 tig \
                 tmux \
@@ -34,7 +34,7 @@ base() {
                 wget \
                 w3m \
                 xclip \
-                zip \
+                zip
 
         sudo dnf autoremove -y
 }
@@ -54,7 +54,7 @@ install_wm() {
         sudo dnf autoremove -y
 }
 
-install_apps() {
+install_misc() {
         sudo dnf check-update
         sudo dnf upgrade -y
 
@@ -66,18 +66,19 @@ install_apps() {
                 ffmpeg \
                 firefox \
                 keepassxc \
-                mozilla-fira-mono-fonts \
-                mozilla-fira-sans-fonts \
-                mozilla-fira-fonts-common \
                 newsboat \
                 mpd \
                 mpc \
                 ncmpcpp \
                 papirus-icon-theme \
-                thunderbird \
-                zathura \
+                thunderbird
 
         sudo dnf autoremove -y
+}
+
+start_service() {
+        systemctl --user enable mpd
+        systemctl --user start mpd
 }
 
 # install custom scripts
@@ -92,6 +93,7 @@ install_scripts() {
 # install rust
 install_rust() {
         curl https://sh.rustup.rs -sSf | sh
+        # todo install rust analyzer
 }
 
 # based on https://github.com/jessfraz/dotfiles/blob/master/bin/install.sh
@@ -120,6 +122,15 @@ install_golang() {
         )
 }
 
+install_node() {
+        VERSION=14
+        sudo dnf module enable nodejs:"${VERSION}"
+        sudo dnf module install -y \
+                nodejs:"${VERSION}"/default
+
+        sudo dnf autoremove -y
+}
+
 usage() {
         echo -e "install.sh\\n\\tThis script install my basic setup for fedora\\n"
         echo "Usage:"
@@ -129,7 +140,9 @@ usage() {
         echo "  apps      - install desktop pkgs"
         echo "  rust      - install rust"
         echo "  golang    - install go"
+        echo "  node      - install node.js"
         echo "  scripts   - install scripts"
+        echo "  service   - enable/start services"
 }
 
 main() {
@@ -144,19 +157,23 @@ main() {
                 base
         elif [[ $arg == "full" ]]; then
                 base
-                install_apps
+                install_misc
                 install_wm
                 install_scripts
         elif [[ $arg == "wm" ]]; then
                 install_wm
-        elif [[ $arg == "apps" ]]; then
-                install_apps
+        elif [[ $arg == "misc" ]]; then
+                install_misc
         elif [[ $arg == "rust" ]]; then
                 install_rust
         elif [[ $arg == "golang" ]]; then
                 install_golang "$2"
+        elif [[ $arg == "node" ]]; then
+                install_node
         elif [[ $arg == "scripts" ]]; then
                 install_scripts
+        elif [[ $arg == "services" ]]; then
+                start_service
         else
                 usage
         fi
