@@ -15,6 +15,8 @@ dotfiles: ## Install dotfiles
 	ln -snf $(CURDIR)/.inputrc $(HOME)/.inputrc;
 	ln -snf $(CURDIR)/.path $(HOME)/.path;
 	ln -snf $(CURDIR)/.tmux.conf $(HOME)/.tmux.conf;
+	ln -snf $(CURDIR)/.Xmodmap $(HOME)/.Xmodmap;
+	ln -snf $(CURDIR)/.xinitrc $(HOME)/.xinitrc;
 	ln -snf $(CURDIR)/.Xresources $(HOME)/.Xresources;
 	xrdb -merge $(HOME)/.Xresources || true
 	git update-index --skip-worktree $(CURDIR)/.gitconfig;
