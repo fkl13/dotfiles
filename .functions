@@ -29,11 +29,13 @@ extract () {
 
 # Use feh to nicely view images
 openimage() {
+    local types='*.jpg *.JPG *.png *.PNG *.gif *.GIF *.jpeg *.JPEG'
+
     cd "$(dirname "$1")" || exit
     local file
     file=$(basename "$1")
 
-    feh -q --auto-zoom \
+    feh -q "$types" --auto-zoom \
         --sort filename --borderless \
         --scale-down --draw-filename \
         --image-bg black \
@@ -50,4 +52,9 @@ man() {
         LESS_TERMCAP_ue="$(printf '\e[0m')" \
         LESS_TERMCAP_us="$(printf '\e[1;32m')" \
         man "$@"
+}
+
+# Run `dig` and display the most useful info
+digga() {
+	dig +nocmd "$1" any +multiline +noall +answer
 }
