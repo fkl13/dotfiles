@@ -61,6 +61,7 @@ install_misc() {
         add_rpmfusion;
 
         sudo dnf install -y \
+                arandr \
                 arc-theme \
                 chromium \
                 ffmpeg \
@@ -70,7 +71,9 @@ install_misc() {
                 mpd \
                 mpc \
                 ncmpcpp \
+                pandoc \
                 papirus-icon-theme \
+                syncthing \
                 thunderbird
 
         sudo dnf autoremove -y
@@ -110,7 +113,7 @@ install_golang() {
         # purge old src
         if [[ -d "$GO_SRC" ]]; then
                 sudo rm -rf "$GO_SRC"
-                sudo rm -rf "$GOPATH"
+                #sudo rm -rf "$GOPATH"
         fi
 
         GO_VERSION=${GO_VERSION#go}
@@ -122,15 +125,6 @@ install_golang() {
         )
 }
 
-install_node() {
-        VERSION=14
-        sudo dnf module enable nodejs:"${VERSION}"
-        sudo dnf module install -y \
-                nodejs:"${VERSION}"/default
-
-        sudo dnf autoremove -y
-}
-
 usage() {
         echo -e "install.sh\\n\\tThis script install my basic setup for fedora\\n"
         echo "Usage:"
@@ -140,7 +134,6 @@ usage() {
         echo "  apps      - install desktop pkgs"
         echo "  rust      - install rust"
         echo "  golang    - install go"
-        echo "  node      - install node.js"
         echo "  scripts   - install scripts"
         echo "  service   - enable/start services"
 }
@@ -168,8 +161,6 @@ main() {
                 install_rust
         elif [[ $arg == "golang" ]]; then
                 install_golang "$2"
-        elif [[ $arg == "node" ]]; then
-                install_node
         elif [[ $arg == "scripts" ]]; then
                 install_scripts
         elif [[ $arg == "services" ]]; then
