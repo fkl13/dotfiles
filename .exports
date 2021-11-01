@@ -13,3 +13,12 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help:* -h";
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X";
+
+if [[ -x "$(command -v fzf)" ]] && [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
+	source /usr/share/fzf/shell/key-bindings.bash
+	#export FZF_DEFAULT_OPTS="--height 50% -1 --layout=reverse-list --multi --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300'"
+fi
+
+if type rg &> /dev/null; then
+	export FZF_DEFAULT_COMMAND='rg'
+fi
