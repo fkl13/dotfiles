@@ -20,5 +20,5 @@ if [[ -x "$(command -v fzf)" ]] && [[ -f /usr/share/fzf/shell/key-bindings.bash 
 fi
 
 if type rg &> /dev/null; then
-	export FZF_DEFAULT_COMMAND='rg'
+	export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{.git/*}"'
 fi
