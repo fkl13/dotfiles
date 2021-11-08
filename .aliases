@@ -8,6 +8,8 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias dl="cd ~/Downloads"
+alias dotfiles="cd ~/dotfiles"
+alias vimrc="cd ~/.vim"
 alias g="git"
 alias h="history"
 
