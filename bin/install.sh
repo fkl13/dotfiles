@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 
 add_rpmfusion() {
-        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm
+        sudo dnf instal -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm
 }
 
 base() {
