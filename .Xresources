@@ -78,7 +78,7 @@ URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
 !-- Font settings -- !
-Xft.dpi:       94
+Xft.dpi:       144
 Xft.rgba:      rgb
 Xft.autohint:  false
 Xft.lcdfilter: lcddefault
@@ -91,10 +91,10 @@ Xft.antialias: true
 *saveLines: 999999
 
 !-- Fonts -- !
-URxvt.font: xft:Iosevka Term:style=regular:pixelsize=14
-URxvt.boldFont: xft:Iosevka Term:style=bold:pixelsize=14
-URxvt.italicFont: xft:Iosevka Term:style=italic:pixelsize=14
-URxvt.boldItalicFont: xft:Iosevka Term:style=bold italic:pixelsize=14
+URxvt.font: xft:Iosevka Term:style=regular:pixelsize=22
+URxvt.boldFont: xft:Iosevka Term:style=bold:pixelsize=22
+URxvt.italicFont: xft:Iosevka Term:style=italic:pixelsize=22
+URxvt.boldItalicFont: xft:Iosevka Term:style=bold italic:pixelsize=22
 
 *bellIsUrgent: true
 
