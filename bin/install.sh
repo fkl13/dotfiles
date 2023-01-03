@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 
 add_rpmfusion() {
-        sudo dnf instal -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm
+        sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm
 }
 
 base() {
@@ -62,21 +62,32 @@ install_misc() {
 
         sudo dnf install -y \
                 arandr \
-                arc-theme \
                 chromium \
                 ffmpeg \
                 firefox \
+		gnome-tweaks \
                 keepassxc \
                 newsboat \
                 mpd \
                 mpc \
                 ncmpcpp \
                 pandoc \
-                papirus-icon-theme \
                 syncthing \
-                thunderbird
+                thunderbird \
+		wireguard-tools
 
         sudo dnf autoremove -y
+}
+
+install_docker() {
+	sudo dnf -y install dnf-plugins-core
+
+	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+	sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+	sudo systemctl daemon-reload
+	sudo systemctl enable docker
+	sudo systemctl start docker
 }
 
 start_service() {
@@ -160,8 +171,9 @@ usage() {
         echo "  apps      - install desktop pkgs"
         echo "  rust      - install rust"
         echo "  golang    - install go"
+        echo "  docker    - install docker"
         echo "  scripts   - install scripts"
-        echo "  service   - enable/start services"
+        echo "  services  - enable/start services"
 }
 
 main() {
@@ -183,6 +195,8 @@ main() {
                 install_wm
         elif [[ $arg == "misc" ]]; then
                 install_misc
+        elif [[ $arg == "docker" ]]; then
+                install_docker
         elif [[ $arg == "rust" ]]; then
                 install_rust
         elif [[ $arg == "golang" ]]; then
