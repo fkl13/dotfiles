@@ -91,10 +91,10 @@ Xft.antialias: true
 *saveLines: 999999
 
 !-- Fonts -- !
-URxvt.font: xft:Iosevka Term:style=regular:pixelsize=22
-URxvt.boldFont: xft:Iosevka Term:style=bold:pixelsize=22
-URxvt.italicFont: xft:Iosevka Term:style=italic:pixelsize=22
-URxvt.boldItalicFont: xft:Iosevka Term:style=bold italic:pixelsize=22
+URxvt.font: xft:JetBrainsMonoNL Nerd Font Mono:style=regular:pixelsize=22
+URxvt.boldFont: xft:JetBrainsMonoNL Nerd Font Mono:style=bold:pixelsize=22
+URxvt.italicFont: xft:JetBrainsMonoNL Nerd Font Mono:style=italic:pixelsize=22
+URxvt.boldItalicFont: xft:JetBrainsMonoNL Nerd Font Mono:style=bold italic:pixelsize=22
 
 *bellIsUrgent: true
 
