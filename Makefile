@@ -11,7 +11,7 @@ dotfiles: ## Install dotfiles
 	ln -snf $(CURDIR)/.functions $(HOME)/.functions;
 	ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig;
 	ln -snf $(CURDIR)/gitignore_global $(HOME)/.gitignore_global;
-	ln -snf $(CURDIR)/.gtkrc-2.0 $(HOME)/.gtkrc-2.0;
+	#ln -snf $(CURDIR)/.gtkrc-2.0 $(HOME)/.gtkrc-2.0;
 	ln -snf $(CURDIR)/.inputrc $(HOME)/.inputrc;
 	ln -snf $(CURDIR)/.path $(HOME)/.path;
 	ln -snf $(CURDIR)/.tmux.conf $(HOME)/.tmux.conf;
@@ -21,14 +21,12 @@ dotfiles: ## Install dotfiles
 	xrdb -merge $(HOME)/.Xresources || true
 	git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	mkdir -p $(HOME)/.config;
-	ln -snf $(CURDIR)/config/gtk-3.0/settings.ini $(HOME)/.config/gtk-3.0/settings.ini;
+	#ln -snf $(CURDIR)/config/gtk-3.0/settings.ini $(HOME)/.config/gtk-3.0/settings.ini;
 	ln -snf $(CURDIR)/config/i3 $(HOME)/.config/i3;
 	ln -snf $(CURDIR)/config/dunst $(HOME)/.config/dunst;
 	ln -snf $(CURDIR)/config/mpd $(HOME)/.config/mpd;
 	ln -snf $(CURDIR)/config/ncmpcpp $(HOME)/.config/ncmpcpp;
 	ln -snf $(CURDIR)/config/ranger $(HOME)/.config/ranger;
-	mkdir -p $(HOME)/.config/Code/User
-	ln -snf $(CURDIR)/config/Code/User/settings.json $(HOME)/.config/Code/User/settings.json;
 
 .PHONY: bin
 bin: ## Sym link the bin dicretory files
