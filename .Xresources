@@ -13,6 +13,9 @@
 *background: #1d2021
 *foreground: #ebdbb2
 
+*.background2: #32302f
+*.linebackground: #282828
+
 ! Black + DarkGrey
 *color0:  #1d2021
 *color8:  #928374
@@ -44,6 +47,10 @@
 ! LightGrey + White
 *color7:  #a89984
 *color15: #ebdbb2
+
+!. DarkOrange + Orange
+*.color16: #d65d0e
+*.color17: #fe8019
 
 ! gruvbox-urxvt256
 URxvt.color24:  #076678
