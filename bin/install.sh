@@ -17,6 +17,7 @@ base() {
                 curl \
                 fzf \
                 git \
+		g++ \
                 htop \
                 jq \
                 libcaca \
@@ -91,6 +92,7 @@ install_docker() {
 }
 
 start_service() {
+	mkdir ~/.mpd
         systemctl --user enable mpd
         systemctl --user start mpd
 }
@@ -108,6 +110,9 @@ install_scripts() {
 install_rust() {
         curl https://sh.rustup.rs -sSf | sh
         # todo install rust analyzer
+        rustup component add rust-src
+        rustup component add rust-analyzer
+        rustup component add clippy
 }
 
 # based on https://github.com/jessfraz/dotfiles/blob/master/bin/install.sh
@@ -190,7 +195,6 @@ main() {
                 base
                 install_misc
                 install_wm
-                install_scripts
         elif [[ $arg == "wm" ]]; then
                 install_wm
         elif [[ $arg == "misc" ]]; then
