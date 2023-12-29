@@ -15,6 +15,7 @@ base() {
                 bash-completion \
                 cifs-utils \
                 curl \
+		foot \
                 fzf \
                 git \
 		g++ \
@@ -109,7 +110,6 @@ install_scripts() {
 # install rust
 install_rust() {
         curl https://sh.rustup.rs -sSf | sh
-        # todo install rust analyzer
         rustup component add rust-src
         rustup component add rust-analyzer
         rustup component add clippy
