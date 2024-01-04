@@ -32,9 +32,10 @@
 
 	ls-ignored-changes = !git ls-files -v | grep ^S | awk '{print $2}'
 
+	dft = difftool
+
 	# from trevor bramble https://twitter.com/TrevorBramble/status/774292970681937920
 	alias=!git config -l | grep ^alias | cut -c 7- | sort
-
 
 [apply]
 	# Detect whitespace errors when applying a patch
