@@ -15,10 +15,10 @@ base() {
                 bash-completion \
                 cifs-utils \
                 curl \
-		foot \
+		        foot \
                 fzf \
                 git \
-		g++ \
+		        g++ \
                 htop \
                 jq \
                 libcaca \
@@ -51,7 +51,12 @@ install_wm() {
                 i3status \
                 i3lock \
                 rofi \
-                dunst
+                dunst \
+                sway \
+                wofi \
+                wl-clipboard \
+                waybar \
+                grim
 
         sudo dnf autoremove -y
 }
@@ -67,7 +72,7 @@ install_misc() {
                 chromium \
                 ffmpeg \
                 firefox \
-		gnome-tweaks \
+		        gnome-tweaks \
                 keepassxc \
                 newsboat \
                 mpd \
@@ -76,7 +81,7 @@ install_misc() {
                 pandoc \
                 syncthing \
                 thunderbird \
-		wireguard-tools
+		        wireguard-tools
 
         sudo dnf autoremove -y
 }
