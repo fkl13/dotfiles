@@ -1,0 +1,10 @@
+show=drun
+height=40%
+width=25%
+term=foot
+image_size=32
+insensitive=true
+allow_images=true
+allow_markup=true
+#no_actions=true
+

@@ -27,6 +27,9 @@ dotfiles: ## Install dotfiles
 	ln -snf $(CURDIR)/config/mpd $(HOME)/.config/mpd;
 	ln -snf $(CURDIR)/config/ncmpcpp $(HOME)/.config/ncmpcpp;
 	ln -snf $(CURDIR)/config/ranger $(HOME)/.config/ranger;
+	ln -snf $(CURDIR)/config/sway $(HOME)/.config/sway;
+	ln -snf $(CURDIR)/config/waybar $(HOME)/.config/waybar;
+	ln -snf $(CURDIR)/config/wofi $(HOME)/.config/wofi;
 
 .PHONY: bin
 bin: ## Sym link the bin dicretory files

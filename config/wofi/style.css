@@ -1,0 +1,42 @@
+window {
+background-color: #282828;
+font-family: JetBrainsMonoNL Nerd Font Mono;
+}
+
+#input {
+margin: 5px;
+border: 2px solid #282828;
+background-color: #282828;
+}
+
+#inner-box {
+margin: 5px;
+border: 2px solid #282828;
+background-color: #282828;
+}
+
+#outer-box {
+margin: 5px;
+border: 2px solid #282828;
+background-color: #282828;
+border-radius: 10px;
+}
+
+#scroll {
+margin: 5px;
+border: 2px solid #282828;
+background-color: #282828;
+}
+
+#text {
+margin: 5px;
+border: 2px #282828;
+color: #ebdbb2;
+}  
+ #entry:selected {
+background-color: #ebdbb2;
+}
+#text:selected {
+color: #282828;
+}
+ 
