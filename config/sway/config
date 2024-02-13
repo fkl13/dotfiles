@@ -18,7 +18,8 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show drun
+# ctrlset $menu wofi --show drun
+set $menu dmenu_path | wofi --show drun | xargs swaymsg exec --
 
 font pango:JetBrainsMonoNL Nerd Font Mono 11
 
@@ -48,6 +49,8 @@ output DP-2 {
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 
 ### Input configuration
 #
@@ -76,6 +79,9 @@ input * xkb_options compose:ralt
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Lock p
+    bindsym $mod+x exec swaylock
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -225,13 +231,8 @@ bar {
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
     # status_command i3status --config ~/.config/i3/status.conf
-    swaybar_command waybar
-
-    colors {
-        statusline #ffffff
-        background #323232
-        #inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    # swaybar_command waybar
+    status_command i3status --config ~/.config/i3/status.conf
 }
 
 include /etc/sway/config.d/*
