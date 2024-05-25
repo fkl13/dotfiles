@@ -238,4 +238,27 @@ bar {
     status_command i3status --config ~/.config/i3/status.conf
 }
 
+# Gruvbox Material Dark
+# https://gist.github.com/Cardoso1994/80641d652a4adcf6c8f718ebc3770ab9
+set $bg       #282828
+set $fg       #d4be98
+set $red      #ea6962
+set $orange   #e78a4e
+set $green    #a9b665
+set $blue     #7daea3
+set $purple   #d3869b
+set $aqua     #89b482
+set $darkgray #282828
+
+# sway appearance
+#       Gruvbox Theme   brdr        bg          text    indictr     chld_brdr
+#client.focused          $orange     $orange     $bg     $orange     $orange
+client.focused          $blue       $blue       $bg     $blue       $blue
+#client.focused_inactive $aqua       $aqua       $bg     $aqua       $aqua
+client.focused_inactive $bg         $bg         $fg     $bg         $bg
+client.unfocused        $bg         $bg         $fg     $bg         $bg
+client.urgent           $red        $red        $bg     $red        $red
+client.placeholder      $bg         $bg         $bg     $bg         $bg
+client.background       $bg
+
 include /etc/sway/config.d/*
