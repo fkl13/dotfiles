@@ -15,14 +15,17 @@ base() {
                 bash-completion \
                 cifs-utils \
                 curl \
-		        foot \
+                fd-find \
+                foot \
                 fzf \
                 git \
-		        g++ \
+                gcc \
+                g++ \
                 htop \
                 jq \
                 libcaca \
                 lynx \
+                make \
                 neovim \
                 poppler \
                 ranger \
@@ -72,7 +75,7 @@ install_misc() {
                 chromium \
                 ffmpeg \
                 firefox \
-		        gnome-tweaks \
+                gnome-tweaks \
                 keepassxc \
                 newsboat \
                 mpd \
@@ -81,7 +84,7 @@ install_misc() {
                 pandoc \
                 syncthing \
                 thunderbird \
-		        wireguard-tools
+                wireguard-tools
 
         sudo dnf autoremove -y
 }
