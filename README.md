@@ -24,5 +24,6 @@ git config --global github.user "$GH_USER"
 
 Inspiration and code was taken from many sources, including:
 
-* [github.com/jessfraz/dotfiles](https://github.com/jessfraz/dotfiles).
+* [github.com/jessfraz/dotfiles](https://github.com/jessfraz/dotfiles)
+* [github.com/jonhoo/configs](https://github.com/jonhoo/configs)
 * [github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
