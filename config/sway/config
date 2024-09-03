@@ -220,7 +220,7 @@ bindsym $mod+r mode "resize"
 #bindsym XF86AudioMicMute exec amixer set Capture toggle # mute mic
 
 # assign application to workspace
-assign [class="thunderbird"] → workspace 9
+assign [app_id="org.mozilla.thunderbird"] → workspace 9
 
 #
 # Status Bar:
