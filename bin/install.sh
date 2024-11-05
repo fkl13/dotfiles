@@ -49,17 +49,13 @@ install_wm() {
         sudo dnf upgrade -y
 
         sudo dnf install -y \
-                feh \
-                i3 \
-                i3status \
-                i3lock \
-                rofi \
                 dunst \
                 sway \
                 wofi \
                 wl-clipboard \
                 waybar \
-                grim
+                grim \
+                slurp
 
         sudo dnf autoremove -y
 }
