@@ -30,7 +30,6 @@ base() {
                 poppler \
                 ranger \
                 ripgrep \
-                rxvt-unicode \
                 ShellCheck \
                 tig \
                 tmux \
@@ -71,6 +70,7 @@ install_misc() {
                 chromium \
                 ffmpeg \
                 firefox \
+                fontawesome-fonts \
                 gnome-tweaks \
                 keepassxc \
                 newsboat \
