@@ -52,3 +52,8 @@ for file in ~/.{bash_prompt,aliases,functions,path,exports,extra}; do
     fi
 done
 unset file
+
+# Use fish in place of bash
+# keep this line at the bottom of ~/.bashrc
+#[ -x /bin/fish ] && SHELL=/bin/fish exec fish
+
