@@ -218,6 +218,11 @@ bindsym $mod+r mode "resize"
 #bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound volume
 #bindsym XF86AudioMute exec amixer -D pulse set Master toggle # mute sound
 #bindsym XF86AudioMicMute exec amixer set Capture toggle # mute mic
+bindsym $mod+F10 exec grim ~/Pictures/screenshots/$(date +'%Y-%m-%d_%H-%M-%S.png') && notify-send -e "   Screenshot taken   "
+bindsym $mod+F11 exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +'%Y-%m-%d_%H-%M-%S.png') && notify-send -e "   Screenshot taken   "
+bindsym $mod+Shift+F10 exec grim - | wl-copy && notify-send -e "   Screenshot copied to clipboard   "
+bindsym $mod+Shift+F11 exec grim -g "$(slurp)" - | wl-copy && notify-send -e "   Screenshot copied to clipboard   "
+
 
 # assign application to workspace
 assign [app_id="org.mozilla.thunderbird"] → workspace 9
@@ -233,9 +238,8 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    # status_command i3status --config ~/.config/i3/status.conf
     swaybar_command waybar
-    status_command i3status --config ~/.config/i3/status.conf
+    #status_command i3status --config ~/.config/i3/status.conf
 }
 
 # Gruvbox Material Dark
