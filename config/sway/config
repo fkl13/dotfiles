@@ -225,7 +225,7 @@ bindsym $mod+Shift+F11 exec grim -g "$(slurp)" - | wl-copy && notify-send -e "  
 
 
 # assign application to workspace
-assign [app_id="org.mozilla.thunderbird"] → workspace 9
+assign [app_id="net.thunderbird.Thunderbird"] → workspace 9
 
 #
 # Status Bar:
