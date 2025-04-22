@@ -25,4 +25,7 @@ RUSTPATH="${HOME}/.cargo/bin"
 pathmunge "$RUSTPATH"
 unset RUSTPATH
 
+export VOLTA_HOME="$HOME/.volta"
+pathmunge "$VOLTA_HOME/bin"
+
 unset -f pathmunge
