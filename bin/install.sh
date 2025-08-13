@@ -155,6 +155,7 @@ install_golang() {
         go install mvdan.cc/gofumpt@latest
         go install golang.org/x/vuln/cmd/govulncheck@latest
         go install golang.org/x/lint/golint@master
+        go install github.com/google/yamlfmt/cmd/yamlfmt@latest
         )
 }
 
