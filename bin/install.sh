@@ -28,7 +28,6 @@ base() {
                 make \
                 neovim \
                 poppler \
-                ranger \
                 ripgrep \
                 ShellCheck \
                 tig \
@@ -119,6 +118,11 @@ install_rust() {
         rustup component add clippy
 }
 
+install_from_cratesio() {
+	cargo install git-grab
+	cargo install --force yazi-build
+}
+
 # based on https://github.com/jessfraz/dotfiles/blob/master/bin/install.sh
 install_golang() {
         export GO_VERSION
@@ -133,7 +137,6 @@ install_golang() {
         # purge old src
         if [[ -d "$GO_SRC" ]]; then
                 sudo rm -rf "$GO_SRC"
-                #sudo rm -rf "$GOPATH"
         fi
 
         GO_VERSION=${GO_VERSION#go}
@@ -170,6 +173,7 @@ usage() {
         echo "  golang    - install go"
         echo "  docker    - install docker"
         echo "  scripts   - install scripts"
+        echo "  crates    - install crates"
         echo "  services  - enable/start services"
 }
 
@@ -199,6 +203,8 @@ main() {
                 install_golang "$2"
         elif [[ $arg == "scripts" ]]; then
                 install_scripts
+        elif [[ $arg == "crates" ]]; then
+                install_from_cratesio
         elif [[ $arg == "services" ]]; then
                 start_service
         else
