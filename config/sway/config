@@ -238,8 +238,9 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    swaybar_command waybar
+    #swaybar_command waybar
     #status_command i3status --config ~/.config/i3/status.conf
+    status_command i3status-rs ~/.config/i3status-rust/config.toml
 }
 
 # Gruvbox Material Dark
