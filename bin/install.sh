@@ -159,6 +159,7 @@ install_golang() {
         go install golang.org/x/vuln/cmd/govulncheck@latest
         go install golang.org/x/lint/golint@master
         go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+        go install github.com/docker/docker-language-server/cmd/docker-language-server@latest
         )
 }
 
