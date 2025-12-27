@@ -144,7 +144,7 @@ install_golang() {
         # subshell
         (
         kernel=$(uname -s | tr '[:upper:]' '[:lower:]')
-        curl -sSL "https://storage.googleapis.com/golang/go${GO_VERSION}.${kernel}-amd64.tar.gz" | sudo tar -v -C /usr/local -xz
+        curl -sSL "https://go.dev/dl/go${GO_VERSION}.${kernel}-amd64.tar.gz" | sudo tar -v -C /usr/local -xz
         )
 
         # get tools
