@@ -15,6 +15,7 @@ base() {
                 bash-completion \
                 cifs-utils \
                 curl \
+                difftastic \
                 fd-find \
                 foot \
                 fzf \

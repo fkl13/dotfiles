@@ -31,6 +31,11 @@
 
 	ls-ignored-changes = !git ls-files -v | grep ^S | awk '{print $2}'
 
+	# `git log` with patches shown with difftastic.
+	dl = -c diff.external=difft log -p --ext-diff
+	# Show the most recent commit with difftastic.
+	ds = -c diff.external=difft show --ext-diff
+
 	dft = difftool
 
 	# from trevor bramble https://twitter.com/TrevorBramble/status/774292970681937920
@@ -51,7 +56,7 @@
 	editor = nvim
 
 [diff]
-	tool = icdiff
+	tool = difftastic
 	noprefix = true
 	algorithm = histogram
 
@@ -63,6 +68,10 @@
 
 [icdiff]
 	options = --highlight --line-numbers
+
+[difftool "difftastic"]
+	# See `man git-difftool` for a description of MERGED, LOCAL and REMOTE.
+	cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 
 [pager]
 	difftool = true
